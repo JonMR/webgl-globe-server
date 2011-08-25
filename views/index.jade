@@ -1,0 +1,33 @@
+#container
+#info
+  | The 
+  a(href="http://www.chromeexperiments.com/globe") WebGL Globe
+  | is an open platform for visualizing geographic data.
+  span.bull &bull;
+  a(href="http://code.google.com/p/webgl-globe/")
+    | Get the code
+    span.bull &bull;
+    | By the Google Data Arts Team
+#title
+  Mango Patron Volume
+a#ce(href="http://www.chromeexperiments.com/globe")
+  span
+    This is a Chrome Experiment
+script(src="/socket.io/socket.io.js")
+script(src="/javascripts/client.js")
+script(src="/javascripts/third-party/Three/ThreeWebGL.js")
+script(src="/javascripts/third-party/Three/ThreeExtras.js")
+script(src="/javascripts/third-party/Three/RequestAnimationFrame.js")
+script(src="/javascripts/third-party/Three/Detector.js")
+script(src="/javascripts/globe.js")
+script
+
+  var globe = DAT.Globe(document.getElementById('container'), function(label) {
+    return new THREE.Color([
+      0xd9d9d9, 0xb6b4b5, 0x9966cc, 0x15adff, 0x3e66a3,
+      0x216288, 0xff7e7e, 0xff1f13, 0xc0120b, 0x5a1301, 0xffcc02,
+      0xedb113, 0x9fce66, 0x0c9a39,
+      0xfe9872, 0x7f3f98, 0xf26522, 0x2bb673, 0xd7df23,
+      0xe6b23a, 0x7ed3f7][label]);
+  });
+  globe.animate();
